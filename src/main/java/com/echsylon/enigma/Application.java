@@ -2,7 +2,6 @@ package com.echsylon.enigma;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
 public class Application {
@@ -37,9 +36,10 @@ public class Application {
 
         byte[] bytes = TEST_INPUT.getBytes(StandardCharsets.UTF_8);
         InputStream input = new ByteArrayInputStream(bytes);
-        OutputStream output = System.out;
 
-        enigma.scramble(input, output);
+        System.out.println(TEST_INPUT);
+        System.out.println("===");
+        enigma.scramble(input, System.out);
     }
 }
 
