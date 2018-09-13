@@ -80,51 +80,51 @@ Assume the above configuration of your Enigma machine:
 
 1. The current now enters the **"I"-rotor"** as 'F' and leaves it as **'I'**.
 
-  1. The current enters the right "lid" of the rotor at the 'F' copper line from the plugboard, which has the index 5 (because 'A'=0). The "cream" is, however, offset by 'E'=4 steps relative to the lids, and, on top of that, the entire rotor has rotated one step relative to the global reference lines (represented by the plugboard). The current therefore enters the "cream" at position 5 + 4 + 1 = 10 as the letter 'K'.
+   1. The current enters the right "lid" of the rotor at the 'F' copper line from the plugboard, which has the index 5 (because 'A'=0). The "cream" is, however, offset by 'E'=4 steps relative to the lids, and, on top of that, the entire rotor has rotated one step relative to the global reference lines (represented by the plugboard). The current therefore enters the "cream" at position 5 + 4 + 1 = 10 as the letter 'K'.
 
-  1. According to documentation, the "cream" of an "I"-rotor will convert 'K' to 'N', which has index 13, but since the "cream" is offset by 4 steps ('E') relative to its "lids", the current will hit the left "lid" at pad 13 - 4 = 9. This rotor has, however, rotated one step which makes pad 9 being offset by 1 relative to the global, plugboard lines, hence, the "I"-rotor will ultimately deliver a signal at line 13 - 4 - 1 = 8, which is the line for the letter 'I'.
+   1. According to documentation, the "cream" of an "I"-rotor will convert 'K' to 'N', which has index 13, but since the "cream" is offset by 4 steps ('E') relative to its "lids", the current will hit the left "lid" at pad 13 - 4 = 9. This rotor has, however, rotated one step which makes pad 9 being offset by 1 relative to the global, plugboard lines, hence, the "I"-rotor will ultimately deliver a signal at line 13 - 4 - 1 = 8, which is the line for the letter 'I'.
 
 1. Next, the current will reach the **"IV"-rotor** as 'I' and leave it as **'V'**.
 
-  1. The same reasoning applies here; the current enters the right "lid" of the rotor on the global 'I'=8 line. This rotor has it's "cream" offset by 'L'=11 relative to its "lids", which means that the current will hit the "cream" as 'T' (8 + 11 = 19). This rotor has not rotated yet so we don't have any global, plugboard-offset to compensate for.
+   1. The same reasoning applies here; the current enters the right "lid" of the rotor on the global 'I'=8 line. This rotor has it's "cream" offset by 'L'=11 relative to its "lids", which means that the current will hit the "cream" as 'T' (8 + 11 = 19). This rotor has not rotated yet so we don't have any global, plugboard-offset to compensate for.
 
-  1. Documentation says that the "cream" of an "IV"-rotor will convert 'T' to 'G' which has index 6. The "cream" offset will result in the rotor delivering a signal on the 'V' pad on its left "lid", because 6 - 11 = -5 and -5 mod 26 = 21, the index of 'V'.
+   1. Documentation says that the "cream" of an "IV"-rotor will convert 'T' to 'G' which has index 6. The "cream" offset will result in the rotor delivering a signal on the 'V' pad on its left "lid", because 6 - 11 = -5 and -5 mod 26 = 21, the index of 'V'.
 
 1. Next, the current will reach the **"III"-rotor** as 'V' and leave it as **'J'**.
 
-  1. Similarly, this rotor has its "cream" offset by 'X'=23 steps, which will result in the current entering the "cream" as 'S', because 21 + 23 = 44 and 44 mod 26 = 18, which is the index of 'S'. This rotor hasn't rotated either, hence there is no global, plugboard-index to honor here either.
+   1. Similarly, this rotor has its "cream" offset by 'X'=23 steps, which will result in the current entering the "cream" as 'S', because 21 + 23 = 44 and 44 mod 26 = 18, which is the index of 'S'. This rotor hasn't rotated either, hence there is no global, plugboard-index to honor here either.
 
-  1. According to documentation, the "III"-rotor "cream" will convert an 'S' to 'G' which has index 6, and compensating for the "cream" offset the signal will leave at pad 'J', because 6 - 23 = -17 and -17 mod 26 = 9, the index of 'J'.
+   1. According to documentation, the "III"-rotor "cream" will convert an 'S' to 'G' which has index 6, and compensating for the "cream" offset the signal will leave at pad 'J', because 6 - 23 = -17 and -17 mod 26 = 9, the index of 'J'.
 
 1. Now, the current enters the extra **"BETA"-rotor** as 'J' and leaves it as **'W'**.
 
-  1. This rotor has no offset between its "cream" and its "lids", hence, there is nothing to adjust for. This is also en extra rotor which, by design can't rotate regardless what its right neighbor does. So no global offset to calculate either.
+   1. This rotor has no offset between its "cream" and its "lids", hence, there is nothing to adjust for. This is also en extra rotor which, by design can't rotate regardless what its right neighbor does. So no global offset to calculate either.
 
 1. The current now reaches the **"B"-reflector** as 'W', which is reflected as **'H'** according to documentation.
 
-  1. The reflector doesn't have any output ports on its left "lid", but rather redirects an input from a pin on its right "lid" to another pin on the right "lid".
+   1. The reflector doesn't have any output ports on its left "lid", but rather redirects an input from a pin on its right "lid" to another pin on the right "lid".
 
 1. Now, the current enters the **"BETA"-rotor** again, but this time as an 'H' from the left "lid" and leaves as an **'X'** through the right "lid".
 
-  1. The very same rules applies when the current flows "the other way" in a rotor. We just have to apply the inverse of the transformation matrix, or switch the reference alphabet with the output alphabet in the "cream", depending on our implementation.
+   1. The very same rules applies when the current flows "the other way" in a rotor. We just have to apply the inverse of the transformation matrix, or switch the reference alphabet with the output alphabet in the "cream", depending on our implementation.
 
 1. Next, the **"III"-rotor** will apply it's inverse logic so that the 'X' becomes a **'Z'**.
 
-  1. Remember the "III"-rotor has it's "cream" offset by 'X'=23 steps, so the current will enter the left "lid" on its way back on line 23 (the 'X' delivered from the previous rotor) and, due to offset, enter the "cream" as 'U'=20 because 23 + 23 = 46 and 46 mod 26 = 20, the index of 'U'.
+   1. Remember the "III"-rotor has it's "cream" offset by 'X'=23 steps, so the current will enter the left "lid" on its way back on line 23 (the 'X' delivered from the previous rotor) and, due to offset, enter the "cream" as 'U'=20 because 23 + 23 = 46 and 46 mod 26 = 20, the index of 'U'.
 
-  1. The reverse conversion of 'U' in a "III"-rotor is documented to be 'W'=22, which, when compensated for the "cream" offset, will leave the right "lid" at the 'Z'=25 pin, because 22 - 23 = -1 and -1 mod 26 is 25, the index of 'Z' in the zero based alphabet.
+   1. The reverse conversion of 'U' in a "III"-rotor is documented to be 'W'=22, which, when compensated for the "cream" offset, will leave the right "lid" at the 'Z'=25 pin, because 22 - 23 = -1 and -1 mod 26 is 25, the index of 'Z' in the zero based alphabet.
 
 1. Then the current enters the **"IV"-rotor** as 'Z' and leaves it as **'J'**.
 
-  1. The "IV"-rotor has a "cream" offset of 'L'=11, hence the current enters the cream as '', while 25 + 11 = 36 and 36 mod 26 = 10, which is 'K'.
+   1. The "IV"-rotor has a "cream" offset of 'L'=11, hence the current enters the cream as '', while 25 + 11 = 36 and 36 mod 26 = 10, which is 'K'.
 
-  1. The "IV"-rotor "cream" reverse-converts 'K' to 'U', which, when compensated for offset delivers 'J' to the next rotor, because 20 - 11 = 9, which is 'J'.
+   1. The "IV"-rotor "cream" reverse-converts 'K' to 'U', which, when compensated for offset delivers 'J' to the next rotor, because 20 - 11 = 9, which is 'J'.
 
 1. The current finally enters the **"I"-rotor"** as 'J' and leaves as **'H'**.
 
-  1. The "I"-rotor has a "cream" offset of 'E'=4 and has, on top of that rotated one step, so the 'J' from the previous rotor enters the "cream" through the left "lid" as 'O' at position 9 + 4 + 1 = 14.
+   1. The "I"-rotor has a "cream" offset of 'E'=4 and has, on top of that rotated one step, so the 'J' from the previous rotor enters the "cream" through the left "lid" as 'O' at position 9 + 4 + 1 = 14.
 
-  1. The reverse conversion of 'O' in a "I"-rotor "cream" is 'M' which, when compensated for the "cream" offset enters the right "lid" at pin 12 - 4 = 8 which ultimately is translated to the global plugboard line of 'H'=7 due to the rotation offset which we need to take into account for the rightmost rotor.
+   1. The reverse conversion of 'O' in a "I"-rotor "cream" is 'M' which, when compensated for the "cream" offset enters the right "lid" at pin 12 - 4 = 8 which ultimately is translated to the global plugboard line of 'H'=7 due to the rotation offset which we need to take into account for the rightmost rotor.
 
 1. Finally the **plugboard** converts the 'H' to **'Z'** which is also delivered as the final result of the encryption algorithm: 'Y' is encrypted as 'Z'.
 
