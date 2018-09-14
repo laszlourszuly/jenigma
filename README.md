@@ -1,3 +1,12 @@
+# Implementing an Enigma simulator
+This exercise is about implementing an Enigma simulator in a programming language of your choice. To your help you have the Internet and the discussion below, and, if having a really bad day; an example Java implementation in this very repository. The [introduction](#introduction-to-the-enigma-machine) could give you an idea on how to model your solution. You won't be able to make it without the documentation on the internal wireing of the rotors, linked to in the end of the [rotor details section](#a-closer-look-at-the-rotors).
+
+Your implementation should be case insensitive regarding the input, and it should ignore everything that's not `[A-Za-z]`. To honor the old ways, you should add a space after each fifth encrypted character and a line break after each fifth group of encrypted characters.
+
+[`Example 1`](#example-1) could be of good use when debugging your rotor implementation. The master test is to configure and feed your finished implementation according to [`Example 2`](#example-2) and verify you get the expected output. You should also be able to feed your encrypted result as input and get the clear text as output.
+
+May the force be with you!
+
 # Setting up the example environment
 After having cloned the repository, change location to the project root and issue below command to setup the correct gradle wrapper for the project.
 
@@ -164,12 +173,3 @@ HETUX DTWLC MMWAV NVJVH OUFAN
 TQACK KTOZZ RDABQ NNVPO IEFQA
 FSVVI CVUDU EREYN PFFMN BJVGQ
 ```
-
-# Implementing the simulator
-The lab is about implementing an Enigma simulator in a programming language of your choice. To your help you have the Internet and the discussion above. The introduction section could give you an idea on how to model your implementation. You won't be able to make it without the link describing the internal wireing of the rotors (http://www.codesandciphers.org.uk/enigma/rotorspec.htm).
-
- Your implementation should be case insensitive regarding the input, and it should ignore anything that's not in the range `[A-Za-z]`. To honor the old ways, you should add a space after each fifth encrypted character and a line break after each fifth group of encrypted characters.
-
-`Example 1` could be of good use when debugging your rotor implementation. The master test is to configure and feed your finished implementation according to `Example 2` and verify you get the expected output. You should also be able to feed your encrypted result as input and get the clear text as output.
-
-May the force be with you!
