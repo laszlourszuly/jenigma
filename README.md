@@ -1,4 +1,4 @@
-# Setting up the development environment
+# Setting up the example environment
 After having cloned the repository, change location to the project root and issue below command to setup the correct gradle wrapper for the project.
 
     gradle wrapper --gradle-version 4.4
