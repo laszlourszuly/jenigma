@@ -53,6 +53,9 @@ When the operator assembles the Enigma configuration, (s)he has 10 + 4 different
 ### The reflector
 The leftmost rotor in an Enigma machine is always a "reflector". A reflector doesn't have any copper pads on its left "lid", but it rather redirects the current from one copper pin to another one, allowing the signal to continue the scrambling path through the other rotors again, but this time from left to right. Another feature of the reflector is that its right neighbor can't hook into it, hence, it doesn't rotate. The reflector is an essential part when it comes to decrypting a previously encrypted message.
 
+The reflector came in two sizes. The Enigma machine originally supported three rotors and the reflector. Later on, to improve encryption, a fourth rotor was
+introduced. To make it fit into the chassi, thinner reflectors were added as well.
+
 ### The extra rotor
 The German navy required a higher level of complexity in their Enigma machines than the rest of the military and added therefore an extra rotor to the right of the reflector, this way reaching a total of five rotors (including the reflector). Functionally this was a regular rotor with the exception that it, just as the reflector, couldn't rotate. It added a significant amount of scrambling combinations, though.
 
@@ -63,7 +66,7 @@ Since its essential for the sender and receiver to have the same configuration o
 
 The above means:
 
-* Use reflector "B"
+* Use reflector "B" (The thin (dünn) version, since we have four rotors)
 * Use extra rotor "BETA"
 * Use standard rotors "III", "IV" and "I"
 * Offset "BETA" to position 'A'
