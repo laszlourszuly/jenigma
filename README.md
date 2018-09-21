@@ -1,5 +1,7 @@
 # Implementing an Enigma simulator
-This exercise is about implementing an Enigma simulator in a programming language of your choice. To your help you have the Internet and the discussion below, and, if having a really bad day; an example Java implementation in this very repository. The [introduction](#introduction-to-the-enigma-machine) could give you an idea on how to model your solution. You won't be able to make it without the documentation on the internal wireing of the rotors, linked to in the end of the [rotor details section](#a-closer-look-at-the-rotors).
+This exercise is about implementing an Enigma simulator in a programming language of your choice. To your help you have the Internet and the discussion below, and, if having a really bad day; an example Java implementation in this very repository. There is also a JavaScript implementation [here](https://github.com/AlbinTheander/jsenigma) (thanks for sharing Albin!).
+
+The [introduction](#introduction-to-the-enigma-machine) could give you an idea on how to model your solution. You won't be able to make it without the documentation on the internal wireing of the rotors, linked to in the end of the [rotor details section](#a-closer-look-at-the-rotors).
 
 Your implementation should be case insensitive regarding the input, and it should ignore everything that's not `[A-Za-z]`. To honor the old ways, you should add a space after each fifth encrypted character and a line break after each fifth group of encrypted characters.
 
